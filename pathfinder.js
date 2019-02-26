@@ -69,12 +69,13 @@ async function renameDBKey(oldKey, newKey) {
 }
 
 async function getLocation(key) {
+
   try {
     const path = await db.get(key);
+    return console.log(path);
   } catch (err) {
-    return errorMsg("Key not found");
+    return errorMsg("Key not found, check your path");
   }
-  return console.log(await db.get(key));
 }
 
 async function listDBContents() {
